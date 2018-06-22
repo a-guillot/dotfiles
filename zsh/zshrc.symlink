@@ -32,3 +32,5 @@ alias -s pdf='okular'
 alias -s epub='okular'
 alias -s zip='file-roller'
 alias -s png='eog'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

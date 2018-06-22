@@ -15,7 +15,14 @@ echo 'Installing dotfiles...'
 cd $original_dir
 source ./link.sh
 
+echo 'Installing vim-plug...'
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo 'creating symlink for matplotlib/matplotlibrc.symlink'
 mkdir -p ~/.config/matplotlib
-ln -sf $original_dir/config/matplotlib/matplotlibrc.symlink ~/.config/matplotlib/matplotlibrc
+ln -sf $original_dir/config/matplotlib/matplotlibrc.symlink \
+    ~/.config/matplotlib/matplotlibrc
 
+echo 'Installing vim plugins'
+vim +'PlugInstall --sync' +qa
