@@ -1,0 +1,10 @@
+[user]
+	name = Andreas Guillot
+	email = and.guillot@gmail.com
+	signingkey = 85716C28
+[commit]
+	gpgsign = false
+[gpg]
+	program = gpg2
+[push]
+	default = simple
