@@ -118,5 +118,6 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 
 " English spell check
-map <silent> <F7> "<Esc>:set spell spelllang=en_us<CR>"
+map <silent> <F6> "<Esc>:set spell spelllang=en_us<CR>"
+map <silent> <F7> "<Esc>:set nospell<CR>"
 
