@@ -14,13 +14,15 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-wombat-scheme'
 Plug 'tpope/vim-fugitive'
-Plug 'lervag/vimtex', {'for': 'latex'}
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+" Disable indentLine for latex
+autocmd Filetype tex let g:indentLine_setConceal = 0
 
 " Change colorscheme
 colorscheme wombat
