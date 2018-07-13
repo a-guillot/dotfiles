@@ -27,6 +27,8 @@ alias clean='sudo apt clean -y && sudo apt autoremove -y'
 alias less='less -R'
 alias grep='grep --color=auto'
 alias n='nvim'
+alias mypy='mypy --ignore-missing-imports'
+alias autopep8='autopep8 --in-place'
 
 # Default programs
 alias -s pdf='okular'
