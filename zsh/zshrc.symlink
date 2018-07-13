@@ -26,6 +26,7 @@ alias update='sudo apt update -y && sudo apt full-upgrade -y'
 alias clean='sudo apt clean -y && sudo apt autoremove -y'
 alias less='less -R'
 alias grep='grep --color=auto'
+alias n='nvim'
 
 # Default programs
 alias -s pdf='okular'

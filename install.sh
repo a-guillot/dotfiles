@@ -24,5 +24,10 @@ mkdir -p ~/.config/matplotlib
 ln -sf $original_dir/config/matplotlib/matplotlibrc.symlink \
     ~/.config/matplotlib/matplotlibrc
 
-echo 'Installing vim plugins'
+echo 'creating symlink for vimrc/init.vim'
+mkdir -p ~/.config/nvim
+ln -sf $original_dir/config/nvim/init.vim.symlink \
+    ~/.config/nvim/init.vim
+
+echo 'Installing vim plugins for vim'
 vim +'PlugInstall --sync' +qa
