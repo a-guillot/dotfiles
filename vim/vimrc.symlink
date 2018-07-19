@@ -120,3 +120,8 @@ let python_highlight_all=1
 map <silent> <F6> "<Esc>:set spell spelllang=en_us<CR>"
 map <silent> <F7> "<Esc>:set nospell<CR>"
 
+" Change spell checker color
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=green
+hi clear SpellLocal
+hi SpellLocal cterm=underline ctermfg=darkgreen
