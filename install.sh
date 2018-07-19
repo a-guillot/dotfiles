@@ -31,3 +31,4 @@ ln -sf $original_dir/config/nvim/init.vim.symlink \
 
 echo 'Installing vim plugins for vim'
 vim +'PlugInstall --sync' +qa
+vim +PlugUpdate +qa
