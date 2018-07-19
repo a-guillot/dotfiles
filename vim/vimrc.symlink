@@ -17,8 +17,12 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'neomake/neomake'
 
 call plug#end()
+
+" Neomake config - When writing a buffer (no delay).
+call neomake#configure#automake('w')
 
 " Disable indentLine for latex
 autocmd Filetype tex let g:indentLine_setConceal = 0
@@ -54,6 +58,10 @@ map <c-h> <c-w>h
 " Moving around the tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+
+" Opening and closing error tab
+map <Leader>o <esc>:lopen<CR>
+map <Leader>p <esc>:lclose<CR>
 
 " Map sort
 vnoremap <Leader>s :sort<CR>
