@@ -10,3 +10,9 @@ sudo apt install curl -y
 sudo apt install python -y
 sudo apt install neovim -y
 sudo apt install zsh -y
+
+# Useful python packages
+sudo apt install python3-matplotlib -y
+sudo apt install python3-pandas -y
+sudo apt install python3-statsmodels -y
+sudo apt install python3-sklearn -y
