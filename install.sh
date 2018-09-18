@@ -2,6 +2,9 @@
 
 original_dir=$(pwd)
 
+echo 'Installing dependencies'
+source ./deps.sh
+
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/colors
 
 if [ ! -d ~/.antigen ]; then
@@ -11,13 +14,16 @@ else
     cd ~/.antigen; git pull
 fi
 
-echo 'Installing dotfiles...'
-cd $original_dir
-source ./link.sh
-
 echo 'Installing vim-plug...'
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo 'Installing Oh My Zsh...'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo 'Installing dotfiles...'
+cd $original_dir
+source ./link.sh
 
 echo 'creating symlink for matplotlib/matplotlibrc.symlink'
 mkdir -p ~/.config/matplotlib
