@@ -9,7 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py'}
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-wombat-scheme'
 Plug 'tpope/vim-fugitive'
