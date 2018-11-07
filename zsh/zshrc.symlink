@@ -30,6 +30,9 @@ alias grep='grep --color=auto'
 alias n='nvim'
 alias mypy='mypy --ignore-missing-imports'
 alias autopep8='autopep8 --in-place'
+alias w='cd ~/Documents/git/ext-store-related-work/andreas'
+alias j='jupyter notebook'
+alias pip = 'sudo -H python3 -m pip'
 
 # Default programs
 alias -s pdf='okular'

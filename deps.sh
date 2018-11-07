@@ -16,3 +16,4 @@ sudo apt install python3-matplotlib -y
 sudo apt install python3-pandas -y
 sudo apt install python3-statsmodels -y
 sudo apt install python3-sklearn -y
+sudo apt install ipython3 -y
