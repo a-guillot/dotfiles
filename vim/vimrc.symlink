@@ -63,6 +63,10 @@ hi cursorline cterm=bold
 set cursorcolumn
 hi cursorcolumn ctermbg=4
 
+" Stop being selfish
+nnoremap <Up> gk
+nnoremap <Down> gj
+
 " Moving around the windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -85,9 +89,9 @@ syntax on
 
 " Showing line number and Length
 set number
-set tw=79
-set colorcolumn=80
-highlight ColorColumn ctermbg=233
+
+" Wrap
+set wrap
 
 " Persistent undo
 set undofile
@@ -133,7 +137,7 @@ let g:SimpylFold_docstring_preview = 1
 
 " Highlight bad spaces
 highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.tex match BadWhitespace /\s\+$/
 
 " Enable all python syntax highlights
 let python_highlight_all=1
