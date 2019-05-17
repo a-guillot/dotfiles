@@ -63,9 +63,15 @@ hi cursorline cterm=bold
 set cursorcolumn
 hi cursorcolumn ctermbg=4
 
-" Stop being selfish
+" Stop being selfish Up
 nnoremap <Up> gk
+vnoremap <Up> gk
+inoremap <Up> <Esc>gka
+
+" Stop being selfish Down
 nnoremap <Down> gj
+vnoremap <Down> gj
+inoremap <Down> <Esc>gja
 
 " Moving around the windows
 map <c-j> <c-w>j
