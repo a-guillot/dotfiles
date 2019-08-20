@@ -18,6 +18,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -92,6 +93,10 @@ vnoremap <Leader>s :sort<CR>
 
 " Syntax Highlighting
 syntax on
+
+" Custom highlighting for smv files
+au BufRead,BufNewFile *.smv set filetype=smvf
+au! Syntax smvf source $HOME/.vim/syntax/svm.vim
 
 " Showing line number and Length
 set number

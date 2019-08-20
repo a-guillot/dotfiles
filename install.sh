@@ -25,16 +25,20 @@ echo 'Installing dotfiles...'
 cd $original_dir
 source ./link.sh
 
-echo 'creating symlink for matplotlib/matplotlibrc.symlink'
+echo 'Creating symlink for matplotlib/matplotlibrc.symlink...'
 mkdir -p ~/.config/matplotlib
 ln -sf $original_dir/config/matplotlib/matplotlibrc.symlink \
     ~/.config/matplotlib/matplotlibrc
 
-echo 'creating symlink for vimrc/init.vim'
+echo 'Creating symlink for vimrc/init.vim...'
 mkdir -p ~/.config/nvim
 ln -sf $original_dir/config/nvim/init.vim.symlink \
     ~/.config/nvim/init.vim
 
-echo 'Installing vim plugins for vim'
+echo 'Installing vim plugins for vim...'
 vim +'PlugInstall --sync' +qa
 vim +PlugUpdate +qa
+
+echo 'Copying custom styles for vim...'
+mkdir -p ~/.vim/syntax
+cp vim/svm.vim ~/.vim/syntax/
