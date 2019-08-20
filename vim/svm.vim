@@ -28,6 +28,13 @@ syn match svm_comments "--.*$" contains=svm_todos
 " Identifiers
 syn keyword svm_identifiers next init
 
+" Operators
+syn match svm_operators ":"
+syn match svm_operators ":="
+syn match svm_operators "->"
+syn match svm_operators "&"
+syn match svm_operators "|"
+
 " Change current language syntax
 let b:current_syntax = "svm"
 
@@ -38,3 +45,4 @@ hi def link svm_comments Comment
 hi def link svm_constants Constant
 hi def link svm_statements Statement
 hi def link svm_identifiers Identifier
+hi def link svm_operators String
