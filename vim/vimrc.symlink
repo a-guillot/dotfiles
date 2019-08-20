@@ -148,7 +148,7 @@ let g:SimpylFold_docstring_preview = 1
 
 " Highlight bad spaces
 highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.tex match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.tex,*.smv match BadWhitespace /\s\+$/
 
 " Enable all python syntax highlights
 let python_highlight_all=1
