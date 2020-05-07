@@ -25,6 +25,10 @@ echo 'Installing dotfiles...'
 cd $original_dir
 source ./link.sh
 
+echo 'Installing backup folder...'
+cd $original_dir
+ln -sf backup.sh ~/backup.sh
+
 echo 'Creating symlink for matplotlib/matplotlibrc.symlink...'
 mkdir -p ~/.config/matplotlib
 ln -sf $original_dir/config/matplotlib/matplotlibrc.symlink \

@@ -1,6 +1,7 @@
 export TERM=xterm-256color
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR=nvim
+export PATH="/home/andreas/miniconda/bin:$PATH"
 
 # Plugins
 source ~/.antigen/antigen.zsh
@@ -36,8 +37,8 @@ alias pip='sudo -H python3 -m pip'
 alias nuxmv='/home/andreas/Documents/nuXmv-1.1.1-Linux/bin/nuXmv'
 
 # Default programs
-alias -s pdf='okular'
-alias -s epub='okular'
+alias -s pdf='evince'
+alias -s epub='evince'
 alias -s zip='file-roller'
 alias -s png='eog'
 
