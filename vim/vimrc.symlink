@@ -7,18 +7,30 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
-Plug 'jiangmiao/auto-pairs'
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --all'}
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-wombat-scheme'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --all'}
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'https://github.com/moll/vim-node'
+Plug 'https://github.com/morhetz/gruvbox'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'fatih/vim-go'
+Plug 'vim-utils/vim-man'
+Plug 'hotoo/jsgf.vim'
+Plug 'ajh17/VimCompletesMe'
+Plug 'lyuts/vim-rtags'
+Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'jacoborus/tender.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'tmhedberg/SimpylFold'
-Plug 'junegunn/fzf', { 'do': 'yes \| ./install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'neomake/neomake'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
 
@@ -43,7 +55,7 @@ let g:syntastic_python_flake8_args = ['-m', 'flake8']
 autocmd Filetype tex let g:indentLine_setConceal = 0
 
 " Change colorscheme
-colorscheme wombat
+colorscheme gruvbox
 
 " Better copy and paste
 set pastetoggle=<F2>
@@ -142,6 +154,11 @@ set fileformat=unix
 " YouCompleteMe commands
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Go to definition or fix
+nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+nnoremap <silent> <Leader>nt :NERDTreeToggle <Enter>
 
 " Tell SimpylFold to fold docstring by default
 let g:SimpylFold_docstring_preview = 1
