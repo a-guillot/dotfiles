@@ -11,6 +11,7 @@ export GRAPHENE_DIR=/home/andreas/Documents/sgx/graphene
 
 # Plugins
 source ~/.antigen/antigen.zsh
+plugins=(kubectl)
 
 # Theme
 ZSH_THEME='af-magic'
@@ -49,8 +50,6 @@ alias -s epub='evince'
 alias -s zip='file-roller'
 alias -s png='eog'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/andreas/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -66,3 +65,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+fpath=(~/.zsh.d/ $fpath)

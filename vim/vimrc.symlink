@@ -16,12 +16,10 @@ Plug 'https://github.com/moll/vim-node'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
-Plug 'fatih/vim-go'
 Plug 'vim-utils/vim-man'
 Plug 'hotoo/jsgf.vim'
 Plug 'ajh17/VimCompletesMe'
 Plug 'lyuts/vim-rtags'
-Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -31,6 +29,14 @@ Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tmhedberg/SimpylFold'
+Plug 'dbeniamine/cheat.sh-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'ThePrimeagen/harpoon'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim''
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 call plug#end()
 
@@ -43,11 +49,14 @@ function Py2()
 endfunction
 
 function Py3()
-  let g:syntastic_python_python_exec = '/usr/local/bin/python3.6'
+  let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 endfunction
 
 call Py3() " default
 
+" File checking
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_shell_checkers = ['shellcheck']
 let g:syntastic_python_flake8_exec = 'python3'
 let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
@@ -60,12 +69,20 @@ colorscheme gruvbox
 " Better copy and paste
 set pastetoggle=<F2>
 
+" Scroll before end
+set scrolloff=3 " Keep 3 lines below and above the cursor
+
 " Mouse and backspace
 set mouse=a
 set bs=2
 
 " Rebinding <Leader> key
-let mapleader = ','
+nnoremap <SPACE> <Nop>
+let mapleader = ' '
+
+" Copy paste into system clipboard
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 
 " Speed up redraws
 set lazyredraw
@@ -100,8 +117,16 @@ map <Leader>m <esc>:tabnext<CR>
 map <Leader>o <esc>:lopen<CR>
 map <Leader>p <esc>:lclose<CR>
 
+" Git fugitive
+nmap <Leader>gs :G<CR>
+nmap <Leader>gj :diffget //3<CR>
+nmap <Leader>gf :diffget //2<CR>
+
 " Map sort
 vnoremap <Leader>s :sort<CR>
+
+" Source surrent file
+noremap <silent><buffer> <F9> :exec 'source '.bufname('%')<CR>
 
 " Syntax Highlighting
 syntax on
