@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Create right folders
+mkdir -p ~/.config/nvim/plugin
+mkdir -p ~/.config/nvim/after/plugin
+mkdir -p ~/.config/nvim/lua
+
+# Symlink everything
+for f in `find . -type f -regex ".*\.vim$\|.*\.lua$" | cut -c3-`; do
+    rm -rf ~.config/nvim/$f
+    ln -sf ~/Documents/git/dotfiles/vim/$f ~/.config/nvim/$f
+done

@@ -35,9 +35,8 @@ ln -sf $original_dir/config/matplotlib/matplotlibrc.symlink \
     ~/.config/matplotlib/matplotlibrc
 
 echo 'Creating symlink for vimrc/init.vim...'
-mkdir -p ~/.config/nvim
-ln -sf $original_dir/config/nvim/init.vim.symlink \
-    ~/.config/nvim/init.vim
+cd $original_dir/vim/
+./install
 
 echo 'Installing vim plugins for vim...'
 vim +'PlugInstall --sync' +qa
@@ -45,4 +44,4 @@ vim +PlugUpdate +qa
 
 echo 'Copying custom styles for vim...'
 mkdir -p ~/.vim/syntax
-cp vim/svm.vim ~/.vim/syntax/
+cp vim/custom_color/svm ~/.vim/syntax/svm.vim
