@@ -34,4 +34,3 @@ set encoding=utf-8 fileencoding=utf-8 " For those of us with weird names
 set cursorline " Highlight and bold current line
 hi cursorline cterm=bold
 set cursorcolumn " Show current column
-hi cursorcolumn ctermbg=4
