@@ -24,6 +24,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-vinegar'
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'tpope/vim-projectionist'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
@@ -48,7 +50,10 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 
 " Moving around 4 terminals
-" XXX
+nmap <leader>tj :call GotoBuffer(0)<CR>
+nmap <leader>tk :call GotoBuffer(1)<CR>
+nmap <leader>tl :call GotoBuffer(2)<CR>
+nmap <leader>th :call GotoBuffer(3)<CR>
 
 " Properly move on wrapped lines
 vnoremap <up> gk
