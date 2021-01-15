@@ -61,6 +61,14 @@ nnoremap <up> gk
 vnoremap <down> gj
 nnoremap <down> gj
 
+" Spell check
+inoremap <F10> <C-O>:GrammarousCheck<CR>
+nnoremap <F10> :GrammarousCheck<CR>
+inoremap <F11> <C-O>:GrammarousCheck --lang='fr'<CR>
+nnoremap <F11> :GrammarousCheck --lang='fr'<CR>
+inoremap <F12> <C-O>:GrammarousReset<CR>
+nnoremap <F12> :GrammarousReset<CR>
+
 
 " Auto commands
 
@@ -73,4 +81,5 @@ endfun
 augroup ANDREAS
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
