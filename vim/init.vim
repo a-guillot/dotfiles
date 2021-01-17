@@ -6,26 +6,25 @@ Plug 'nvim-lua/popup.nvim' " Telescope dep
 Plug 'nvim-lua/plenary.nvim' " Telescope dep
 Plug 'nvim-telescope/telescope.nvim' " Find files
 Plug 'gruvbox-community/gruvbox' " Colorscheme
-Plug 'jiangmiao/auto-pairs'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'puremourning/vimspector'
-Plug 'szw/vim-maximizer'
-Plug 'rust-lang/rust.vim'
-Plug 'tweekmonster/gofmt.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'stsewd/fzf-checkout.vim'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-dispatch'
-Plug 'ThePrimeagen/harpoon'
-Plug 'tpope/vim-vinegar'
-Plug 'dbeniamine/cheat.sh-vim'
-Plug 'tpope/vim-projectionist'
-Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'jiangmiao/auto-pairs' " Auto pair matching symbols
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Fancy highlights
+Plug 'nvim-treesitter/playground' " Dependency
+Plug 'puremourning/vimspector' " Debugger
+Plug 'szw/vim-maximizer' " Maximize buffers
+Plug 'rust-lang/rust.vim' " Rust language
+Plug 'tweekmonster/gofmt.vim' " Golang
+Plug 'tpope/vim-fugitive' " Git integration
+Plug 'vim-utils/vim-man' " Manual for vim commands
+Plug 'mbbill/undotree' " More complex undos
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy search
+Plug 'junegunn/fzf.vim' " Fuzzy search in vim
+Plug 'stsewd/fzf-checkout.vim' " Dependency
+Plug 'tpope/vim-dispatch' " Launch commands from vim
+Plug 'tpope/vim-vinegar' " File explorer
+Plug 'dbeniamine/cheat.sh-vim' " Cheat sheet integration
+Plug 'tpope/vim-projectionist' " Custom vim per project
+Plug 'octol/vim-cpp-enhanced-highlight' " Better highlight for cpp
+Plug 'rhysd/vim-grammarous' " Multi language grammer checker
 
 call plug#end()
 
@@ -73,4 +72,7 @@ endfun
 augroup ANDREAS
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+    command! W :w
+    command! Q :q
 augroup END
