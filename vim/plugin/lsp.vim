@@ -1,3 +1,11 @@
 " LSP config
 
-set completeopt=menuone,noinsert,noselect " Do not auto fill auto completions
+lua << EOF
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.ccls.setup{}
+require'lspconfig'.dockerls.setup{}
+require'lspconfig'.vimls.setup{}
+require'lspconfig'.yamlls.setup{}
+require'lspconfig'.sqlls.setup{}
+require'lspconfig'.pyright.setup{}
+EOF

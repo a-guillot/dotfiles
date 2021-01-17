@@ -26,6 +26,7 @@ Plug 'dbeniamine/cheat.sh-vim' " Cheat sheet integration
 Plug 'tpope/vim-projectionist' " Custom vim per project
 Plug 'octol/vim-cpp-enhanced-highlight' " Better highlight for cpp
 Plug 'rhysd/vim-grammarous' " Multi language grammer checker
+Plug 'neovim/nvim-lspconfig' " Language syntax
 
 call plug#end()
 
