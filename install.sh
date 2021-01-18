@@ -5,7 +5,7 @@ original_dir=$(pwd)
 echo 'Installing dependencies'
 source ./deps.sh
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/colors
+mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/colors ~/.ssh
 
 if [ ! -d ~/.antigen ]; then
     echo 'Installing antigen...'
@@ -13,6 +13,13 @@ if [ ! -d ~/.antigen ]; then
 else
     cd ~/.antigen; git pull
 fi
+
+echo 'Installing true nvim...'
+wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
+chmod +x nvim
+sudo chown root:root nvim
+sudo mv nvim /usr/bin/
+mkdir -p .config/nvim
 
 echo 'Installing vim-plug...'
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -38,9 +45,11 @@ echo 'Creating symlink for vimrc/init.vim...'
 cd $original_dir/vim/
 ./install
 
-echo 'Installing vim plugins for vim...'
+echo 'Installing vim plugins for vim and nvim...'
 vim +'PlugInstall --sync' +qa
 vim +PlugUpdate +qa
+nvim +'PlugInstall --sync' +qa
+nvim +PlugUpdate +qa
 
 echo 'Copying custom styles for vim...'
 mkdir -p ~/.vim/syntax
