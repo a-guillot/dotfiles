@@ -6,7 +6,7 @@ export PATH="/home/andreas/miniconda/bin:$PATH"
 export PATH="$PATH:/home/andreas/istio-1.8.0/bin"
 export PATH="$PATH:/home/andreas/istio-1.8.1/bin"
 
-export GRAPHENE_DIR=/home/andreas/Documents/sgx/graphene
+export GRAPHENE_DIR=/home/andreas/Documents/git/graphene
 
 
 # Plugins
@@ -41,7 +41,6 @@ alias mypy='mypy --ignore-missing-imports'
 alias autopep8='autopep8 --in-place'
 alias w='cd ~/Documents/git/ext-store-related-work/andreas'
 alias j='jupyter notebook'
-alias pip='sudo -H python3 -m pip'
 alias nuxmv='/home/andreas/Documents/nuXmv-1.1.1-Linux/bin/nuXmv'
 
 # Default programs

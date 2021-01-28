@@ -81,9 +81,12 @@ endfun
 
 augroup ANDREAS
     autocmd!
-    autocmd BufWritePre * :call TrimWhitespace()
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     command! W :w
     command! Q :q
+    autocmd BufWritePre * :call TrimWhitespace()
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+
+    " Specific to tex filex
+    autocmd FileType tex let b:did_indent=1
 augroup END
