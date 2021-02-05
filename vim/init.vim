@@ -27,6 +27,16 @@ Plug 'tpope/vim-projectionist' " Custom vim per project
 Plug 'octol/vim-cpp-enhanced-highlight' " Better highlight for cpp
 Plug 'rhysd/vim-grammarous' " Multi language grammer checker
 Plug 'neovim/nvim-lspconfig' " Language syntax
+Plug 'lervag/vimtex' " for latex
+
+" Python3 configuration
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sbdchd/neoformat'
+Plug 'davidhalter/jedi-vim'
+Plug 'neomake/neomake'
+Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
 
