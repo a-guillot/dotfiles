@@ -8,4 +8,5 @@ require'lspconfig'.vimls.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.sqlls.setup{}
 require'lspconfig'.pyright.setup{}
+require'lspconfig'.svelte.setup{}
 EOF

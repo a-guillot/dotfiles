@@ -8,7 +8,7 @@ Plug 'nvim-lua/plenary.nvim' " Telescope dep
 Plug 'nvim-telescope/telescope.nvim' " Find files
 Plug 'gruvbox-community/gruvbox' " Colorscheme
 Plug 'jiangmiao/auto-pairs' " Auto pair matching symbols
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Fancy highlights
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'commit': '3c07232'} " Fancy highlights
 Plug 'nvim-treesitter/playground' " Dependency
 Plug 'puremourning/vimspector' " Debugger
 Plug 'szw/vim-maximizer' " Maximize buffers
@@ -28,19 +28,40 @@ Plug 'octol/vim-cpp-enhanced-highlight' " Better highlight for cpp
 Plug 'rhysd/vim-grammarous' " Multi language grammer checker
 Plug 'neovim/nvim-lspconfig' " Language syntax
 Plug 'lervag/vimtex' " for latex
-
-" Python3 configuration
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'scrooloose/nerdcommenter'
-Plug 'sbdchd/neoformat'
-Plug 'davidhalter/jedi-vim'
+Plug 'bling/vim-bufferline'
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
+Plug 'theprimeagen/harpoon'
+
+" Python3 configuration
+Plug 'Shougo/deoplete.nvim'
+Plug 'numirias/semshi'
+Plug 'vimjas/vim-python-pep8-indent'
 
 call plug#end()
 
 colorscheme gruvbox " Change to decent colorscheme
+
+" Python tests
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/home/andreas/.random/repos/github.com/Shougo/dein.vim
+
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
+" Required:
+filetype plugin indent on
+syntax enable
+call deoplete#enable()
+
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+autocmd CompleteDone * pclose " To close preview window of deoplete automagically
+
+
 
 
 " Custom variables

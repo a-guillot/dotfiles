@@ -1,28 +1,33 @@
 " Python3 configuration
 
-let g:deoplete#enable_at_startup = 1
+let g:ale_linters = {
+    \   'python': ['flake8', 'pylint'],
+    \}
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
-" Select completion without creating newline.
-let g:SuperTabCrMapping = 1
-" Use vimtex for latex completion.
-call deoplete#custom#var('omni', 'input_patterns', {
-    \ 'tex': g:vimtex#re#deoplete})
+let g:ale_linters = {
+    \   'python': ['yapf'],
+    \}
 
-" Enable alignment
-let g:neoformat_basic_format_align = 1
+nmap <F10> :ALEFix<CR>
+let g:ale_fix_on_save = 1
 
-" Enable tab to space conversion
-let g:neoformat_basic_format_retab = 1
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
 
-" Enable trimmming of trailing whitespace
-let g:neoformat_basic_format_trim = 1
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
 
-" disable autocompletion, because we use deoplete for completion
-let g:jedi#completions_enabled = 0
+  return l:counts.total == 0 ? '✨ all good ✨' : printf(
+        \   '😞 %dW %dE',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
 
-" open the go-to function in split, not another buffer
-let g:jedi#use_splits_not_buffers = "right"
+set statusline=
+set statusline+=%m
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
 
-let g:neomake_python_enabled_makers = ['pylint']
 call neomake#configure#automake('nrwi', 500)

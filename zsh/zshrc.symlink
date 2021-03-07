@@ -7,6 +7,7 @@ export PATH="$PATH:/home/andreas/istio-1.8.0/bin"
 export PATH="$PATH:/home/andreas/istio-1.8.1/bin"
 
 export GRAPHENE_DIR=/home/andreas/Documents/git/graphene
+export PYTHONSTARTUP="$(python -m jedi repl)"
 
 
 # Plugins
