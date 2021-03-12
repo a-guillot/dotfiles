@@ -8,7 +8,7 @@ Plug 'nvim-lua/plenary.nvim' " Telescope dep
 Plug 'nvim-telescope/telescope.nvim' " Find files
 Plug 'gruvbox-community/gruvbox' " Colorscheme
 Plug 'jiangmiao/auto-pairs' " Auto pair matching symbols
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'commit': '3c07232'} " Fancy highlights
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/playground' " Dependency
 Plug 'puremourning/vimspector' " Debugger
 Plug 'szw/vim-maximizer' " Maximize buffers
@@ -31,7 +31,7 @@ Plug 'lervag/vimtex' " for latex
 Plug 'bling/vim-bufferline'
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
-Plug 'theprimeagen/harpoon'
+Plug 'ThePrimeagen/harpoon'
 
 " Python3 configuration
 Plug 'Shougo/deoplete.nvim'
@@ -81,11 +81,10 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 
-" Moving around 4 terminals
-nmap <leader>tj :call GotoBuffer(0)<CR>
-nmap <leader>tk :call GotoBuffer(1)<CR>
-nmap <leader>tl :call GotoBuffer(2)<CR>
-nmap <leader>th :call GotoBuffer(3)<CR>
+" Moving around 3 terminals
+nmap <leader>tj :lua require("harpoon.ui").nav_file(1)<CR>
+nmap <leader>tk :call Harpoon_GotoTerminal(2)<CR>
+nmap <leader>tl :call Harpoon_GotoTerminal(3)<CR>
 
 " Properly move on wrapped lines
 vnoremap <up> gk
@@ -114,6 +113,7 @@ augroup ANDREAS
     autocmd!
     command! W :w
     command! Q :q
+    autocmd VimEnter * :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(3) | :lua require("harpoon.ui").nav_file(1)
     autocmd BufWritePre * :call TrimWhitespace()
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}

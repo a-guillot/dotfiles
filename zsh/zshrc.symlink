@@ -40,7 +40,7 @@ alias grep='grep --color=auto'
 alias n='nvim'
 alias mypy='mypy --ignore-missing-imports'
 alias autopep8='autopep8 --in-place'
-alias w='cd ~/Documents/git/ext-store-related-work/andreas'
+alias w='cd ~/Documents/git/thesis/'
 alias j='jupyter notebook'
 alias nuxmv='/home/andreas/Documents/nuXmv-1.1.1-Linux/bin/nuXmv'
 
