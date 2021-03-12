@@ -84,7 +84,8 @@ vnoremap <leader>y "+y
 " Moving around 3 terminals
 nmap <leader>tj :lua require("harpoon.ui").nav_file(1)<CR>
 nmap <leader>tk :call Harpoon_GotoTerminal(2)<CR>
-nmap <leader>tl :call Harpoon_GotoTerminal(3)<CR>
+nmap <leader>a :tabprev<CR>
+nmap <leader>s :tabnext<CR>
 
 " Properly move on wrapped lines
 vnoremap <up> gk
