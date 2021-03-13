@@ -31,7 +31,7 @@ Plug 'lervag/vimtex' " for latex
 Plug 'bling/vim-bufferline'
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
-Plug 'ThePrimeagen/harpoon'
+Plug '/home/andreas/Documents/git/harpoon'
 
 " Python3 configuration
 Plug 'Shougo/deoplete.nvim'
@@ -82,8 +82,10 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 
 " Moving around 3 terminals
-nmap <leader>tj :lua require("harpoon.ui").nav_file(1)<CR>
+lua require("andreas")
+nmap <leader>tj :call Harpoon_GotoTerminal(1)<CR>
 nmap <leader>tk :call Harpoon_GotoTerminal(2)<CR>
+nmap <leader>tl :call Harpoon_GotoTerminal(3)<CR>
 nmap <leader>a :tabprev<CR>
 nmap <leader>s :tabnext<CR>
 
@@ -114,7 +116,7 @@ augroup ANDREAS
     autocmd!
     command! W :w
     command! Q :q
-    autocmd VimEnter * :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(3) | :lua require("harpoon.ui").nav_file(1)
+    autocmd VimEnter * :call Harpoon_SetTerminal(1) | :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(3) | :call Harpoon_GotoTerminal(1)
     autocmd BufWritePre * :call TrimWhitespace()
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
