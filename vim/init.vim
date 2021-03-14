@@ -116,7 +116,7 @@ augroup ANDREAS
     autocmd!
     command! W :w
     command! Q :q
-    autocmd VimEnter * :call Harpoon_SetTerminal(1) | :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(3) | :call Harpoon_GotoTerminal(1)
+    autocmd VimEnter * :call Harpoon_SetTerminal(1) | :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(1)
     autocmd BufWritePre * :call TrimWhitespace()
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
