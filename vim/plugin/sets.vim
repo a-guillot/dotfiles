@@ -18,6 +18,7 @@ set undodir=~/.vim/undodir " Where to store undos
 set undofile " Restore undos for desired file when opening
 set undolevels=1000 " Increase undo levels
 set history=700 " Increase history size
+set inccommand=split
 set incsearch " Highlight search results while searching
 set scrolloff=8 " Start scrolling 8 lines before end
 set noshowmode " Do not show the mode you're in
