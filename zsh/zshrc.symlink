@@ -6,7 +6,8 @@ export PATH="/home/andreas/miniconda/bin:$PATH"
 export PATH="$PATH:/home/andreas/istio-1.8.0/bin"
 export PATH="$PATH:/home/andreas/istio-1.8.1/bin"
 
-export GRAPHENE_DIR=/home/andreas/Documents/git/graphene
+export PATH="$HOME/local/nvim/bin/:$PATH"
+
 export PYTHONSTARTUP="$(python -m jedi repl)"
 
 gcsfuse() {
@@ -38,10 +39,9 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias update='sudo apt update -y && sudo apt full-upgrade -y'
 alias clean='sudo apt clean -y && sudo apt autoremove -y'
+alias n='nvim'
 alias less='less -R'
 alias grep='grep --color=auto'
-alias nvim='$HOME/local/nvim/bin/nvim'
-alias n='nvim'
 alias mypy='mypy --ignore-missing-imports'
 alias autopep8='autopep8 --in-place'
 alias w='cd ~/Documents/git/thesis/'
