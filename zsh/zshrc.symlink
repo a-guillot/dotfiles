@@ -9,6 +9,9 @@ export PATH="$PATH:/home/andreas/istio-1.8.1/bin"
 export GRAPHENE_DIR=/home/andreas/Documents/git/graphene
 export PYTHONSTARTUP="$(python -m jedi repl)"
 
+gcsfuse() {
+ /usr/bin/gcsfuse "$@"
+}
 
 # Plugins
 source ~/.antigen/antigen.zsh

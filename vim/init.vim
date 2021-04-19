@@ -31,7 +31,10 @@ Plug 'lervag/vimtex' " for latex
 Plug 'bling/vim-bufferline'
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
-Plug '/home/andreas/Documents/git/harpoon'
+Plug 'theprimeagen/harpoon'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Python3 configuration
 Plug 'Shougo/deoplete.nvim'
@@ -82,10 +85,10 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 
 " Moving around 3 terminals
-lua require("andreas")
-nmap <leader>tj :call Harpoon_GotoTerminal(1)<CR>
-nmap <leader>tk :call Harpoon_GotoTerminal(2)<CR>
-nmap <leader>tl :call Harpoon_GotoTerminal(3)<CR>
+"lua require("andreas")
+"nmap <leader>tj :call Harpoon_GotoTerminal(1)<CR>
+"nmap <leader>tk :call Harpoon_GotoTerminal(2)<CR>
+"nmap <leader>tl :call Harpoon_GotoTerminal(3)<CR>
 nmap <leader>a :tabprev<CR>
 nmap <leader>s :tabnext<CR>
 
@@ -103,6 +106,10 @@ nnoremap <F11> :GrammarousCheck --lang='fr'<CR>
 inoremap <F12> <C-O>:GrammarousReset<CR>
 nnoremap <F12> :GrammarousReset<CR>
 
+" Abbreviations
+abbr st section
+abbr sst subsection
+abbr ssst subsubsection
 
 " Auto commands
 
@@ -116,7 +123,7 @@ augroup ANDREAS
     autocmd!
     command! W :w
     command! Q :q
-    autocmd VimEnter * :call Harpoon_SetTerminal(1) | :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(1)
+    " autocmd VimEnter * :call Harpoon_SetTerminal(1) | :call Harpoon_GotoTerminal(2) | :call Harpoon_GotoTerminal(1)
     autocmd BufWritePre * :call TrimWhitespace()
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
