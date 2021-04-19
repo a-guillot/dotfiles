@@ -8,8 +8,7 @@ Plug 'nvim-lua/plenary.nvim' " Telescope dep
 Plug 'nvim-telescope/telescope.nvim' " Find files
 Plug 'gruvbox-community/gruvbox' " Colorscheme
 Plug 'jiangmiao/auto-pairs' " Auto pair matching symbols
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground' " Dependency
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'puremourning/vimspector' " Debugger
 Plug 'szw/vim-maximizer' " Maximize buffers
 Plug 'rust-lang/rust.vim' " Rust language
@@ -71,7 +70,7 @@ autocmd CompleteDone * pclose " To close preview window of deoplete automagicall
 
 nnoremap <space> <nop>
 let mapleader=" " " Space as leader key
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+"lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 " Remaps
 " First letter: mode changed
@@ -127,7 +126,4 @@ augroup ANDREAS
     autocmd BufWritePre * :call TrimWhitespace()
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
-
-    " Specific to tex filex
-    autocmd FileType tex let b:did_indent=1
 augroup END
