@@ -34,6 +34,7 @@ Plug 'theprimeagen/harpoon'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'tpope/vim-commentary'
 
 " Python3 configuration
 Plug 'Shougo/deoplete.nvim'
