@@ -9,8 +9,8 @@ Plug 'nvim-telescope/telescope.nvim' " Find files
 Plug 'gruvbox-community/gruvbox' " Colorscheme
 Plug 'jiangmiao/auto-pairs' " Auto pair matching symbols
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'puremourning/vimspector' " Debugger
 Plug 'szw/vim-maximizer' " Maximize buffers
+Plug 'puremourning/vimspector' " Debugger
 Plug 'rust-lang/rust.vim' " Rust language
 Plug 'tweekmonster/gofmt.vim' " Golang
 Plug 'tpope/vim-fugitive' " Git integration

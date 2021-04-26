@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+PERSONAL_SESSION="thesis"
+THESIS="~/Documents/git/thesis/master/manuscript"
+BLOCKCHAIN_CODE="~/Documents/git/thesis/code/code/"
+
+while [ "$#" -gt 0 ]; do
+    curr=$1
+    shift
+
+    case "$curr" in
+    "-b")
+	tmux new-session -d -s blockchain
+
+	tmux rename-window code
+	tmux send-keys -t blockchain:code "cd $BLOCKCHAIN_CODE" Enter
+	tmux send-keys -t blockchain:code "nvim fair_delegation.ts" Enter
+	tmux new-window -n dev -t blockchain
+	tmux send-keys -t blockchain:dev "cd $BLOCKCHAIN_CODE" Enter
+	tmux send-keys -t blockchain:dev "cd contracts && ls *sol | xargs -n 1 -P 2 -t ../node_modules/.bin/solcjs --bin --abi && cd .." Enter
+	tmux new-window -n launcher -t blockchain
+	tmux send-keys -t blockchain:launcher "cd $BLOCKCHAIN_CODE" Enter
+	tmux send-keys -t blockchain:launcher "node_modules/.bin/ganache-cli -a 3 -d andreas" Enter
+
+	tmux select-window -t code
+        ;;
+
+    "-t")
+	tmux new-session -d -s manuscript
+
+	tmux rename-window code
+	tmux send-keys -t manuscript:code "cd $THESIS" Enter
+	tmux send-keys -t manuscript:code "nvim andreas.tex" Enter
+	tmux new-window -n debug -t manuscript
+	tmux send-keys -t manuscript:debug "cd $THESIS" Enter
+	tmux send-keys -t manuscript:debug "" Enter
+	tmux select-window -t code
+        ;;
+
+    *) echo "Unavailable command... $curr"
+    esac
+done
