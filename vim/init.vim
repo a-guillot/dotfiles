@@ -36,6 +36,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-commentary'
+Plug 'tomlion/vim-solidity' " Solidity support
 
 " Python3 configuration
 Plug 'Shougo/deoplete.nvim'
