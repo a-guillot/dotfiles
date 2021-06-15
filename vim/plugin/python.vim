@@ -30,4 +30,4 @@ set statusline+=\ %f
 set statusline+=%=
 set statusline+=\ %{LinterStatus()}
 
-call neomake#configure#automake('nrwi', 500)
+call neomake#configure#automake('nr', 50)

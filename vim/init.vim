@@ -37,6 +37,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-commentary'
 Plug 'tomlion/vim-solidity' " Solidity support
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " Python3 configuration
 Plug 'Shougo/deoplete.nvim'

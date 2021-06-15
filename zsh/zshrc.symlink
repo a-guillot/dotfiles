@@ -6,8 +6,6 @@ export PATH="/home/andreas/miniconda/bin:$PATH"
 export PATH="$PATH:/home/andreas/istio-1.8.0/bin"
 export PATH="$PATH:/home/andreas/istio-1.8.1/bin"
 
-export PATH="$HOME/local/nvim/bin/:$PATH"
-
 export PYTHONSTARTUP="$(python -m jedi repl)"
 
 gcsfuse() {
