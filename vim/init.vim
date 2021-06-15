@@ -40,7 +40,7 @@ Plug 'tomlion/vim-solidity' " Solidity support
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " Python3 configuration
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 Plug 'numirias/semshi'
 Plug 'vimjas/vim-python-pep8-indent'
 
@@ -62,7 +62,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 " Required:
 filetype plugin indent on
 syntax enable
-call deoplete#enable()
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd CompleteDone * pclose " To close preview window of deoplete automagically
